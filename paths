@@ -1,0 +1,12 @@
+# Brew
+PHPBREWBIN="$(brew --prefix homebrew/php/php71)/bin:"
+# Composer
+COMPOSERBIN=$HOME/.composer/vendor/bin:
+# Node & NPM
+
+# Home
+USERBIN=$HOME/bin:$HOME/.polka/bin:
+# RUBY & RVM
+RUBYBIN=$HOME/.rvm/bin:
+
+PATH=${USERBIN}${COMPOSERBIN}${PHPBREWBIN}${RUBYBIN}${PATH}

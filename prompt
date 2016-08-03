@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+##############################################
+# Bash Prompt
+# v0.0.1
+# Frank McCoy <frankmccoy.d@gmail.com>
+##############################################
+
+set_prompt() {
+  PS1=`ps_pro`
+  export PS1
+}
+
+ps_pro() {
+  reset="\e[0m"
+  host="\e[0;33m\]\h${reset}"
+  lctd="\e[1;34m\]\w${reset}"
+  user="\e[1;35m\]\u${reset}"
+  ps1="\n\[${host}:${lctd} ${user}\n\$ \]"
+  echo $ps1
+}
+
+ps_default() {
+  ps1="\[\h:\W \u\$ \]"
+  echo $ps1
+}
+
+set_prompt
+unset set_prompt
